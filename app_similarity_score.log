@@ -1,0 +1,32 @@
+2023-12-14 18:00:57,457 - __main__ - INFO - Started getting similarity score
+2023-12-14 18:00:58,581 - httpx - INFO - HTTP Request: DELETE https://2fe344a0-a048-4805-b43f-d26fabce81fa.us-east4-0.gcp.cloud.qdrant.io:6333/collections/resume_collection_name "HTTP/1.1 200 OK"
+2023-12-14 18:00:58,985 - httpx - INFO - HTTP Request: PUT https://2fe344a0-a048-4805-b43f-d26fabce81fa.us-east4-0.gcp.cloud.qdrant.io:6333/collections/resume_collection_name "HTTP/1.1 200 OK"
+2023-12-14 18:01:03,281 - QdrantSearch - ERROR - Error getting embeddings: You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with higher rate limits at 'https://dashboard.cohere.ai/api-keys'. Contact us on 'https://discord.gg/XW44jPfYJu' or email us at support@cohere.com with any questions
+Traceback (most recent call last):
+  File "d:\Azure Project\SampleApp\scripts\similarity\get_similarity_score.py", line 112, in get_embedding
+    embeddings = self.cohere.embed([text], "large").embeddings
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Azure Project\SampleApp\.venv\Lib\site-packages\cohere\client.py", line 358, in embed
+    for result in self._executor.map(lambda json_body: self._request(cohere.EMBED_URL, json=json_body), json_bodys):
+  File "C:\Python311\Lib\concurrent\futures\_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\concurrent\futures\_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\concurrent\futures\_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Python311\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Azure Project\SampleApp\.venv\Lib\site-packages\cohere\client.py", line 358, in <lambda>
+    for result in self._executor.map(lambda json_body: self._request(cohere.EMBED_URL, json=json_body), json_bodys):
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Azure Project\SampleApp\.venv\Lib\site-packages\cohere\client.py", line 850, in _request
+    self._check_response(json_response, response.headers, response.status_code)
+  File "D:\Azure Project\SampleApp\.venv\Lib\site-packages\cohere\client.py", line 792, in _check_response
+    raise CohereAPIError(
+cohere.error.CohereAPIError: You are using a Trial key, which is limited to 1000 API calls / month. You can continue to use the Trial key for free or upgrade to a Production key with higher rate limits at 'https://dashboard.cohere.ai/api-keys'. Contact us on 'https://discord.gg/XW44jPfYJu' or email us at support@cohere.com with any questions

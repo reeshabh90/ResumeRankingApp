@@ -1,0 +1,5 @@
+cohere: 
+  api_key: 5d4d0S72GG9wINkPxfGFV86xjg8PH6pFvm9cjGCb 
+qdrant: 
+  api_key: ZHp8-SaCOU2ErdH4qC7NmzJygZD_KLZgEmpvESJa0VWdQUJQ1UMLzg
+  url: https://2fe344a0-a048-4805-b43f-d26fabce81fa.us-east4-0.gcp.cloud.qdrant.io:6333
