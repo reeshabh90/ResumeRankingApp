@@ -8,3 +8,10 @@ textacy==0.13.0
 cohere~=4.19.2
 qdrant-client>=1.2
 PyYAML==6.0.1
+numpy==1.26.4
+sentence-transformers
+torch>=1.11.0
+transformers>=4.34.0,<5.0.0
+scikit-learn
+scipy
+huggingface-hub>=0.15.1
